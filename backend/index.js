@@ -5,11 +5,14 @@ import { config, dbConfig } from "./config.js";
 
 const app = express();
 const pool = new Pool({
-  host: dbConfig.host,
-  database: dbConfig.database,
-  user: dbConfig.user,
-  password: dbConfig.password,
-  port: dbConfig.port
+  host: dbConfig.DB_HOST,
+  database: dbConfig.DB_DATABASE,
+  user: dbConfig.DB_USER,
+  password: dbConfig.DB_PASSWORD,
+  port: dbConfig.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false
+  }
 })
 
 app.use(cors({

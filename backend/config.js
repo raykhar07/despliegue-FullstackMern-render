@@ -3,9 +3,9 @@ export const config = {
 }
 
 export const dbConfig = {
-  host: process.env.DB_HOST || "localhost",
-  database: process.env.DB_DATABASE || "postgres",
-  user: process.env.DB_USER || "postgres",
-  password: process.env.DB_PASSWORD || "Raykhar0201",
-  port: process.env.DB_PORT || 5444
+  DB_HOST: process.env.DB_HOST || "localhost",
+  DB_DATABASE: process.env.DB_DATABASE || "postgres",
+  DB_USER: process.env.DB_USER || "postgres",
+  DB_PASSWORD: process.env.DB_PASSWORD || "Raykhar0201",
+  DB_PORT: process.env.DB_PORT || 5444
 }
