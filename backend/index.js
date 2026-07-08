@@ -1,22 +1,22 @@
 import express from "express";
 import cors from "cors";
 import {Pool} from "pg";
-import { config, dbConfig } from "./config.js";
+import { FRONTEND_URL, DB_DATABASE, DB_PORT, DB_PASSWORD, DB_USER, PORT, DB_HOST } from "./config.js";
 
 const app = express();
 const pool = new Pool({
-  host: dbConfig.DB_HOST,
-  database: dbConfig.DB_DATABASE,
-  user: dbConfig.DB_USER,
-  password: dbConfig.DB_PASSWORD,
-  port: dbConfig.DB_PORT,
+  host: DB_HOST,
+  database: DB_DATABASE,
+  user: DB_USER,
+  password: DB_PASSWORD,
+  port: DB_PORT,
   ssl: {
     rejectUnauthorized: false
   }
 })
 
 app.use(cors({
-  origin: config.FRONTEND_URL
+  origin: FRONTEND_URL
 }));
 app.use(express.json());
 
