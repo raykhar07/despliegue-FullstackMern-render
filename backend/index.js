@@ -10,9 +10,6 @@ const pool = new Pool({
   user: DB_USER,
   password: DB_PASSWORD,
   port: DB_PORT,
-  ssl: {
-    rejectUnauthorized: false
-  }
 })
 
 app.use(cors({
